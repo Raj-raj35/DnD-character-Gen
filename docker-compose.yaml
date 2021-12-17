@@ -3,7 +3,7 @@ services:
 
   frontend:
     build: ./frontend
-    image: raj/frontend
+    image: rajdockerac/frontend
     container_name: application
     ports:
     - target: 5000
@@ -14,7 +14,7 @@ services:
 
   backend:
     build: ./backend
-    image: raj/backend
+    image: rajdockerac/backend
     container_name: backend
     ports:
     - target: 5003
@@ -25,7 +25,7 @@ services:
 
   service1:
     build: ./service1
-    image: raj/service1
+    image: rajdockerac/service1
     container_name: service1
     ports:
     - target: 5001
@@ -36,7 +36,7 @@ services:
 
   service2:
     build: ./service2
-    image: raj/service2
+    image: rajdockerac/service2
     container_name: service2
     ports:
     - target: 5002
@@ -46,12 +46,18 @@ services:
       replicas: 1
 
   nginx:
-    build: ./nginx
+    image: nginx:latest
     container_name: nginx
-    enviroment:
-      - SERVER_NAME=20.124.246.104
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: .nginx/nginx.conf
+      target: /rtc/nginx/nginx.conf
     restart: always
-    network_mode: host
+    
     
 
 
