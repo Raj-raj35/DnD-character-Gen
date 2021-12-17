@@ -1,14 +1,14 @@
 version: "3.7"
 services:
 
-  # frontend:
-   #  build: ./frontend
-    # image: rajdockerac/frontend
-    # container_name: application
-    # ports:
-    # - target: 5000
-    #   published: 5000
-    #  protocol: tcp
+  frontend:
+    build: ./frontend
+    image: rajdockerac/frontend
+    container_name: application
+    ports:
+    target: 5000
+    published: 5000
+    protocol: tcp
     deploy:
       replicas: 1
 
