@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages{
-        stage('build'){
+        stage('appTesting'){
             steps{
-                sh './scripts/build.sh'
+                sh './scripts/apptest.sh'
 
             }
         }
