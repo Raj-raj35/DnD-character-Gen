@@ -6,7 +6,7 @@ services:
     container_name: application
     ports:
     - target: 5000
-    published: 5000
+      published: 5000
     deploy:
       replicas: 1
 
