@@ -8,7 +8,6 @@ services:
     ports:
     - target: 5000
     published: 5000
-    protocol: tcp
     deploy:
       replicas: 1
 
@@ -55,7 +54,7 @@ services:
     volumes:
     - type: bind
       source: .nginx/nginx.conf
-      target: /rtc/nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
     restart: always
     
     
