@@ -52,7 +52,7 @@ services:
       protocol: tcp
     volumes:
     - type: bind
-      source: .nginx/nginx.conf
+      source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
     restart: always
     
