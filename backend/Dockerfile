@@ -1,6 +1,6 @@
-FROM Python:3.8.10
+FROM python
 COPY ./requirements.txt .
 RUN pip3 install -r requirements.txt
 COPY . .
 EXPOSE 5003
-ENTRYPOINT [ "PYTHON3, "app.py" ]
+ENTRYPOINT [ "python3, "app.py" ]
