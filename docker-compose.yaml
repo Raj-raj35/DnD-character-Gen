@@ -6,7 +6,7 @@ services:
     image: rajdockerac/frontend
     container_name: application
     ports:
-    target: 5000
+    - target: 5000
     published: 5000
     protocol: tcp
     deploy:
